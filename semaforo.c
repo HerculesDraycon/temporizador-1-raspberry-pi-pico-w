@@ -24,14 +24,17 @@ bool repeating_timer_callback(struct repeating_timer *t){
         case RED:
             gpio_put(RED_PINO, true);
             state = YELLOW;  //Define o proximo estado
+            printf("\nLED RED aceso, estado YELLOW definido.");
             break;
         case YELLOW:
             gpio_put(BLUE_PINO, true);
             state = GREEN;  //Define o proximo estado
+            printf("\nLED BLUE(YELLOW) aceso, estado GREEN definido.");
             break;
         case GREEN:
             gpio_put(GREEN_PINO, true);
             state = RED;  //Define o proximo estado
+            printf("\nLED GREEN aceso, estado RED definido.");
             break;
 
     }
